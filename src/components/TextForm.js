@@ -22,10 +22,11 @@ function TextForm(props) {
   };
  const handleRepeat=()=>{
   let newText= text.repeat(2);
-  setText(newText)}
-  return (
+  setText(newText)
+  }
+    return (
     <>
-    <div className="container">
+    <div className="container"style={{color:props.mode==="light"?"grey":"white"}}>
       <h1>{props.heading}</h1>
       <div className="mb-3">
         <textarea
@@ -34,6 +35,7 @@ function TextForm(props) {
           id="myBox"
           rows="8"
           onChange={HandleChange}
+          style={{backgroundColor:props.mode==="light"?"white":"grey",color:props.mode==="light"?"grey":"white"}}
         ></textarea>
       </div>
       <button className="btn btn-primary" onClick={handleUpClick}>
@@ -49,14 +51,14 @@ function TextForm(props) {
         Repeat
       </button>
     </div>
-    <div className="container my-3">
+    <div className="container my-3"  style={{color:props.mode==="light"?"grey":"white"}}>
         <h1>Your text summary</h1>
         <p>{text.split(" ").length}words and {text.length}chracters</p>
         <p>{0.008*text.split(" ").length} Minutes read</p>
         <h2>Preview</h2>
-        <p>{text}</p>
+        <p>{text.length>0?text:"enter something to preview"}</p>
     </div>
     </>
   );
-}
+  }
 export default TextForm;
