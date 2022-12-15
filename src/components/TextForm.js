@@ -1,20 +1,21 @@
 import React from "react";
 import { useState } from "react";
-
 function TextForm(props) {
   const [text, setText] = useState("Enter text here");
+  const HandleChange = (event) => {
+    setText(event.target.value)                                          
+    console.log(setText);
+  };
   const handleUpClick = () => {
     console.log("Upper case was clicked"+text);
     let newText=text.toUpperCase();
     setText(newText);
-  };
-  const HandleChange = (event) => {
-    setText(event.target.value)
-    console.log(setText);
+    props.showAlert("converted to uppercase","success");
   };
   const handleLoClick=() => {
     let newText=text.toLowerCase();
     setText(newText);
+    props.showAlert("converted to Lowercase","success");
   };
   const handleClear=() => {
     let newText=(" ");
@@ -26,7 +27,7 @@ function TextForm(props) {
   }
     return (
     <>
-    <div className="container"style={{color:props.mode==="light"?"grey":"white"}}>
+    <div className="container"style={{color:props.mode==="dark"?"white":"#042743"}}>
       <h1>{props.heading}</h1>
       <div className="mb-3">
         <textarea
@@ -35,7 +36,7 @@ function TextForm(props) {
           id="myBox"
           rows="8"
           onChange={HandleChange}
-          style={{backgroundColor:props.mode==="light"?"white":"grey",color:props.mode==="light"?"grey":"white"}}
+          style={{backgroundColor:props.mode==="dark"?"grey":"white",color:props.mode==="dark"?"white":"#042743"}}
         ></textarea>
       </div>
       <button className="btn btn-primary" onClick={handleUpClick}>
@@ -44,10 +45,10 @@ function TextForm(props) {
       <button className="btn btn-primary mx-3" onClick={handleLoClick}>
         Convert to Lower Case
       </button>
-      <button className="btn btn-warning mx-3" onClick={handleClear}>
+      <button className="btn btn-primary mx-3" onClick={handleClear}>
         Clear
       </button>
-      <button className="btn btn-info mx-3" onClick={handleRepeat}>
+      <button className="btn btn-primary mx-3" onClick={handleRepeat}>
         Repeat
       </button>
     </div>
