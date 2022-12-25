@@ -36,25 +36,26 @@ function TextForm(props) {
           id="myBox"
           rows="8"
           onChange={HandleChange}
-          style={{backgroundColor:props.mode==="dark"?"grey":"white",color:props.mode==="dark"?"white":"#042743"}}
+          style={{backgroundColor:props.mode==="dark"?"#13466eC ":"white",color:props.mode==="dark"?"white":"#042743"}}
         ></textarea>
       </div>
       <button className="btn btn-primary" onClick={handleUpClick}>
         Convert to Upper Case
       </button>
-      <button className="btn btn-primary mx-3" onClick={handleLoClick}>
+      <button className="btn btn-primary mx-1 my-1" onClick={handleLoClick}>
         Convert to Lower Case
       </button>
-      <button className="btn btn-primary mx-3" onClick={handleClear}>
+      <button className="btn btn-primary mx-1 my-1" onClick={handleClear}>
         Clear
       </button>
-      <button className="btn btn-primary mx-3" onClick={handleRepeat}>
+      <button className="btn btn-primary mx-1 my-1" onClick={handleRepeat}>
         Repeat
       </button>
     </div>
     <div className="container my-3"  style={{color:props.mode==="light"?"grey":"white"}}>
         <h1>Your text summary</h1>
-        <p>{text.split(" ").length}words and {text.length}chracters</p>
+        <p>{text.split(" ").filter((element)=>{return element.length!==0}).length}
+        words and {text.length}chracters</p>
         <p>{0.008*text.split(" ").length} Minutes read</p>
         <h2>Preview</h2>
         <p>{text.length>0?text:"enter something to preview"}</p>
