@@ -1,0 +1,14 @@
+{
+  "files": {
+    "main.css": "/codeWithHarry/static/css/main.31d6cfe0.css",
+    "main.js": "/codeWithHarry/static/js/main.3734595b.js",
+    "static/js/787.5ca94ede.chunk.js": "/codeWithHarry/static/js/787.5ca94ede.chunk.js",
+    "index.html": "/codeWithHarry/index.html",
+    "main.3734595b.js.map": "/codeWithHarry/static/js/main.3734595b.js.map",
+    "787.5ca94ede.chunk.js.map": "/codeWithHarry/static/js/787.5ca94ede.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.31d6cfe0.css",
+    "static/js/main.3734595b.js"
+  ]
+}
